@@ -150,7 +150,7 @@ void INCLCascadeIntranuke::LoadConfig(void)
   theConfig = incl_nucleus->getConfig();
   if(theConfig->getINCLXXDataFilePath().size() == 0){ // if the inclxx data file path is not setup, then initialize the genie::NucleusGenINCL
     AlgFactory * algf = AlgFactory::Instance();
-    auto incl = dynamic_cast<const NucleusGenI*> (algf->GetAlgorithm("genie::NucleusGenINCL", "NoDeEx")); // initialize INCL configuration for hadron model, will never use it.
+    auto incl = dynamic_cast<const NucleusGenI*> (algf->GetAlgorithm("genie::NucleusGenINCL", "Default")); // initialize INCL configuration for hadron model, will never use it.
     assert(incl);
   }
 
