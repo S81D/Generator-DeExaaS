@@ -3,9 +3,11 @@
 <!--
 Tune-scoped override for ARINCL23_20i. Identical to the top-level
 config/NucleusGenINCL.xml "Default" param_set except inclxx-de-excitation,
-switched OFF here. genie::MarleyDeExcitation is wired in as the
-de-excitation step for all 8 of this tune's "Default"-generator-list
-channels (see EventGenerator.xml) instead of INCL's own built-in ABLA07 call.
+switched OFF here. No de-excitation model (neither INCL's own built-in
+ABLA07 nor genie::MarleyDeExcitation) is wired in for any of this tune's
+8 "Default"-generator-list channels (see EventGenerator.xml): events are
+left with an un-de-excited nuclear remnant so downstream HepMC3 output
+can be post-processed by an external de-excitation step.
 -->
 
 <alg_conf>
